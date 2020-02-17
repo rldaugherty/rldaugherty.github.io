@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<!------------------------
+
+    NOTES: 
+    - Make portfolio images grayscale using CSS, then full color on hover: 
+    .portfolio-img {
+      /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+      filter: gray; /* IE5+ */
+      -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+      -webkit-transition: all .5s ease-in-out;
+    }
+
+    .portfolio-img:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+      -webkit-transform: scale(1.01);
+    }
+
+------------------->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/scss/styles.css">
+    <title>Raymond Daugherty - Digital Designer</title>
+</head>
+
+<body class="is-preload">
+    <!------------------------------------------------------------------------ -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!------------------------------------------------------------------------ -->
+
+
+    <div id="wrapper">
+        <!--- INTRO -->
+        <div class="page__style intro">
+            <div class="page__description">
+                <div id="intro">
+                    <div class="box"></div>
+
+                    <header id="homepage-header">
+                        <div class="logo">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="header-content">
+                            <div class="inner">
+                                <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
+                                <p>
+                                    Digital Designer with experience in beautiful Web Design and Print
+                                    Media
+                                </p>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><button class="btn_nav intro_link">Home</button></li>
+                                <li><button class="btn_nav work_link">Work</button></li>
+                                <li><button class="btn_nav about_link">About Me</button></li>
+                                <li><button class="btn_nav contact_link">Contact</button></li>
+                                <!-- li><a href="#elements">Elements</a></li -->
+                            </ul>
+                        </nav>
+                    </header>
+
+                </div>
+            </div>
+        </div>
+
+        <!--- WORK -->
+
+        <div class="page__style work">
+            <div class="page__description">
+                <div id="work">
+                    <div class="box"></div>
+                    <header id="subpage-header">
+                        <div class="logo">
+                            <span class="icon"></span>
+                        </div>
+                        <div class="subpage-content">
+                            <div class="inner">
+                                <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
+                                <p>
+                                    bla bla bla
+
+                                </p>
+                            </div>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><button class="btn_nav intro_link">Intro</button></li>
+                                <li><button class="btn_nav work_link">Work</button></li>
+                                <li><button class="btn_nav about_link">About Me</button></li>
+                                <li><button class="btn_nav contact_link">Contact</button></li>
+                                <!-- li><a href="#elements">Elements</a></li -->
+                            </ul>
+                        </nav>
+                    </header>
+
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <p class="copyright">2020 Untitled. Design: <a href="mailto:ramymond.daugherty.jr@gmail.com">Raymond
+                    Daugherty</a>.</p>
+        </footer>
+    </div>
+    <!------------------------------------------------------------------------ -->
+    <div class="bg"></div>
+    <!------------------------------------------------------------------------ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Fakes the loading setting a timeout
+            setTimeout(function () {
+                $("body").addClass("loaded");
+            }, 10);
+            $('.intro').addClass('fadeIn');
+        });
+
+        $('.btn_nav').click(function () {
+            // $('.bg').addClass('hide');
+            // animate content
+            $('.page__style').addClass('animate_content');
+            $('.page__description').fadeOut(100).delay(2800).fadeIn();
+            $('.bg').fadeOut(100).delay(2800).fadeIn();
+
+            setTimeout(function () {
+                $('.page__style').removeClass('animate_content');
+            }, 3200);
+
+            //remove fadeIn class after 1500ms
+            setTimeout(function () {
+                $('.page__style').removeClass('fadeIn');
+            }, 1500);
+
+        });
+
+        // on click show page after 1500ms
+        $('.intro_link').click(function () {
+            setTimeout(function () {
+                $('.intro').addClass('fadeIn');
+            }, 1500);
+        });
+
+        $('.work_link').click(function () {
+            setTimeout(function () {
+                $('.work').addClass('fadeIn');
+            }, 1500);
+        });
+
+        $('.about_link').click(function () {
+            setTimeout(function () {
+                $('.about').addClass('fadeIn');
+            }, 1500);
+        });
+
+        $('.contact_link').click(function () {
+            setTimeout(function () {
+                $('.contact').addClass('fadeIn');
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
