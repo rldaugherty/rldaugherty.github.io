@@ -1,0 +1,451 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700");
+@import url("/assets/scss/loader.css");
+@import url("/assets/scss/page-trans.css");
+/* Basic */
+/* Small tablets and large smartphones (landscape view) */
+/* $screen-sm-min: 100px; */
+$screen-sm-max: 500px;
+
+/*  Small tablets (portrait view) */
+/* $screen-md-min: 501px; */
+$screen-md-max: 991px;
+
+/*  Tablets and small desktops */
+/* $screen-lg-min: 992px; */
+$screen-lg-max: 2499px;
+
+/*  Large tablets and desktops */
+$screen-xl-min: 2500px;
+
+/* Small devices */
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+}
+
+/* Medium devices */
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+}
+
+/* Large devices */
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+}
+
+/* Extra large devices */
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) and (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+}
+/* Custom devices */
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box; /* This makes the padding and margin part of the boxes sizing, instead of adding the padding and margin to the overall size of the box */
+  margin: 0;
+  padding: 0;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 2.375;
+  background-color: #000;
+  color: #000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  #wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 2rem;
+    z-index: 3;
+    flex-flow: column;
+
+    &:before {
+      content: "";
+      display: block;
+    }
+    .work,
+    .intro {
+      background: url("/assets/images/bg.jpg") no-repeat center center fixed;
+    }
+
+    /* START Homepage Header */
+    #homepage-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        .icon {
+          box-sizing: border-box;
+          height: 100px;
+          width: 100px;
+          border: solid 1px #fff;
+          border-radius: 100%;
+          background: url("/assets/images/raymond-lane-mc.svg") center center
+            no-repeat;
+          &:before {
+          }
+        }
+      }
+      .header-content {
+        width: 100%;
+        border-top: solid 1px #fff;
+        border-bottom: solid 1px #fff;
+        border-radius: 0.5em;
+        padding: 1em;
+        color: #fff;
+        text-align: center;
+        margin-top: 3.5em;
+        @include md {
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: relative;
+          top: calc(-4.5rem - 1px);
+          left: calc(50% - 1px);
+          width: 1px;
+          height: calc(3.5rem + 1px);
+          background: #ffffff;
+        }
+        &:after {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: calc(-4.5rem - 1px);
+          left: calc(50% - 1px);
+          width: 1px;
+          height: calc(3.5rem + 1px);
+          background: #ffffff;
+        }
+        .inner {
+          #full-name {
+            box-sizing: border-box;
+            background: url("/assets/images/raymond-daugherty-desktop.svg")
+              center/contain no-repeat;
+            text-indent: -999999px;
+            margin: 0 auto;
+            line-height: 5.3;
+
+            @include md {
+              background: url("/assets/images/raymond-daugherty-mobile.svg")
+                center/contain no-repeat;
+              margin-top: -2em;
+            }
+            &.dark-shadow {
+              filter: drop-shadow(0.2em 0.2em 0.1em rgba(0, 0, 0, 1));
+            }
+          }
+          p {
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-size: 0.8rem;
+            line-height: 2;
+            @include md {
+              margin-bottom: -3em;
+            }
+          }
+        }
+      }
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 4.3em;
+
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        line-height: 2;
+        ul {
+          display: flex;
+          justify-content: space-between;
+          list-style-type: none;
+          width: 100%;
+          flex-direction: row;
+          @include md {
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1em;
+          }
+          li {
+            display: flex;
+            width: 25%;
+            border: solid 1px #fff;
+            justify-content: center;
+            color: #fff;
+            @include md {
+              flex-direction: column;
+              width: 50%;
+              justify-content: center;
+              align-items: center;
+            }
+            button {
+              color: #fff;
+              text-decoration: none;
+              display: flex;
+              padding: 1em;
+              width: 100%;
+              align-content: center;
+              justify-content: center;
+              background-color: rgba(0, 0, 0, 0);
+              border: 0;
+              text-transform: inherit;
+            }
+
+            &:first-child {
+              border-bottom-left-radius: 0.25em;
+              border-top-left-radius: 0.25em;
+            }
+            &:last-child {
+              border-bottom-right-radius: 0.25em;
+              border-top-right-radius: 0.25em;
+            }
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.6);
+            }
+          }
+        }
+      }
+    }
+    /* END Homepage Header */
+
+    /* START SUBPAGE HEADER & CONTENT */
+
+    /* START Homepage Header */
+    #subpage-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        .icon {
+          box-sizing: border-box;
+          height: 100px;
+          width: 100px;
+          border: solid 1px #fff;
+          border-radius: 100%;
+          background: url("/assets/images/raymond-lane-mc.svg") center center
+            no-repeat;
+          &:before {
+          }
+        }
+      }
+      .subpage-content {
+        width: 100%;
+        border-top: solid 1px #fff;
+        border-bottom: solid 1px #fff;
+        border-radius: 0.5em;
+        padding: 1em;
+        color: #fff;
+        text-align: center;
+        margin-top: 3.5em;
+        @include md {
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        }
+        &:before {
+          content: "";
+          display: block;
+          position: relative;
+          top: calc(-4.5rem - 1px);
+          left: calc(50% - 1px);
+          width: 1px;
+          height: calc(3.5rem + 1px);
+          background: #ffffff;
+        }
+        &:after {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: calc(-4.5rem - 1px);
+          left: calc(50% - 1px);
+          width: 1px;
+          height: calc(3.5rem + 1px);
+          background: #ffffff;
+        }
+        .inner {
+          #full-name {
+            box-sizing: border-box;
+            background: url("/assets/images/raymond-daugherty-desktop.svg")
+              center/contain no-repeat;
+            text-indent: -999999px;
+            margin: 0 auto;
+            line-height: 5.3;
+
+            @include md {
+              background: url("/assets/images/raymond-daugherty-mobile.svg")
+                center/contain no-repeat;
+              margin-top: -2em;
+            }
+            &.dark-shadow {
+              filter: drop-shadow(0.2em 0.2em 0.1em rgba(0, 0, 0, 1));
+            }
+          }
+          p {
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-size: 0.8rem;
+            line-height: 2;
+            @include md {
+              margin-bottom: -3em;
+            }
+          }
+        }
+      }
+      nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 4.3em;
+
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        line-height: 2;
+        ul {
+          display: flex;
+          justify-content: space-between;
+          list-style-type: none;
+          width: 100%;
+          flex-direction: row;
+          @include md {
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1em;
+          }
+          li {
+            display: flex;
+            width: 25%;
+            border: solid 1px #fff;
+            justify-content: center;
+            color: #fff;
+            @include md {
+              flex-direction: column;
+              width: 50%;
+              justify-content: center;
+              align-items: center;
+            }
+            button {
+              color: #fff;
+              text-decoration: none;
+              display: flex;
+              padding: 1em;
+              width: 100%;
+              align-content: center;
+              justify-content: center;
+              background-color: rgba(0, 0, 0, 0);
+              border: 0;
+              text-transform: inherit;
+            }
+
+            &:first-child {
+              border-bottom-left-radius: 0.25em;
+              border-top-left-radius: 0.25em;
+            }
+            &:last-child {
+              border-bottom-right-radius: 0.25em;
+              border-top-right-radius: 0.25em;
+            }
+            &:hover {
+              background-color: rgba(0, 0, 0, 0.6);
+            }
+          }
+        }
+      }
+    }
+    /* END Homepage Header */
+
+    /* END SUBPAGE HEADER & CONTENT */
+  }
+  #footer {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 11;
+    .copyright {
+      letter-spacing: 0.2rem;
+      font-size: 0.6rem;
+      opacity: 0.75;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      a {
+        color: #f9c922;
+      }
+    }
+  }
+  /* Background fade in css */
+  .bg {
+    z-index: -1;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("/assets/images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    animation-name: bg-fadeIn;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    /* Keyframes needed to animate background */
+    @keyframes bg-fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
