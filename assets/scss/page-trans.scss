@@ -10,7 +10,10 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  &.intro {
+    align-items: center;
+  }
 
   .page__description {
     color: #ffffff;

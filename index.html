@@ -23,6 +23,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/scss/styles.css">
+    <link rel="stylesheet" href="/assets/scss/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/scss/fontawesome-all.min.css">
     <title>Raymond Daugherty - Digital Designer</title>
 </head>
 
@@ -80,15 +82,7 @@
                     <header id="subpage-header">
                         <div class="logo">
                             <span class="icon"></span>
-                        </div>
-                        <div class="subpage-content">
-                            <div class="inner">
-                                <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
-                                <p>
-                                    bla bla bla
-
-                                </p>
-                            </div>
+                            <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
                         </div>
                         <nav>
                             <ul>
@@ -100,6 +94,22 @@
                             </ul>
                         </nav>
                     </header>
+                    <div class="subpage-content">
+                        <div class="inner">
+
+                            <p>
+                                bla bla bla
+                                <a href="#text-callout2" class="open-popup-text text-link"
+                                    style="color: #FFF !important; text-align: right;display: block !important; width: 100%; padding: 1em;">Text
+                                    Link</a>
+
+                                <div id="text-callout2" class="text-popup mfp-hide">
+                                    <strong>HTML Formated Popup2</strong><br>
+                                    <p>Text Copy Goes here</p>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -115,6 +125,7 @@
     <!------------------------------------------------------------------------ -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.js"></script>
     <script>
         $(document).ready(function () {
             // Fakes the loading setting a timeout
@@ -123,7 +134,14 @@
             }, 10);
             $('.intro').addClass('fadeIn');
         });
+        // Pop-up script
+        $('.open-popup-text').magnificPopup({
+            type: 'inline',
+            midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });
 
+
+        // Page Transition Javascript
         $('.btn_nav').click(function () {
             // $('.bg').addClass('hide');
             // animate content
