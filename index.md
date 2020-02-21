@@ -2,8 +2,8 @@
 <html lang="en">
 <!------------------------
 
-    NOTES: 
-    - Make portfolio images grayscale using CSS, then full color on hover: 
+    NOTES:
+    - Make portfolio images grayscale using CSS, then full color on hover:
     .portfolio-img {
       /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
       filter: gray; /* IE5+ */
@@ -17,12 +17,19 @@
       -webkit-transform: scale(1.01);
     }
 
+    -- Add a "Portfolio" button at the top of the page.
+        https://www.youtube.com/watch?v=1D4FzPcEiN4
+
+        "Intelligence is knowing Frankenstein was the doctor, not the monster. Wisdom is knowing that Frankenstein was really the true monster."
+
 ------------------->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/scss/styles.css">
+    <link rel="stylesheet" href="/assets/scss/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>Raymond Daugherty - Digital Designer</title>
 </head>
 
@@ -34,7 +41,6 @@
         <div class="loader-section section-right"></div>
     </div>
     <!------------------------------------------------------------------------ -->
-
 
     <div id="wrapper">
         <!--- INTRO -->
@@ -58,7 +64,6 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><button class="btn_nav intro_link">Home</button></li>
                                 <li><button class="btn_nav work_link">Work</button></li>
                                 <li><button class="btn_nav about_link">About Me</button></li>
                                 <li><button class="btn_nav contact_link">Contact</button></li>
@@ -80,18 +85,11 @@
                     <header id="subpage-header">
                         <div class="logo">
                             <span class="icon"></span>
-                        </div>
-                        <div class="subpage-content">
-                            <div class="inner">
-                                <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
-                                <p>
-                                    bla bla bla
-
-                                </p>
-                            </div>
+                            <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
+                            <div class="menu-btn"><i class="fas fa-bars fa-2x"></i></div>
                         </div>
                         <nav>
-                            <ul>
+                            <ul class="main-menu">
                                 <li><button class="btn_nav intro_link">Intro</button></li>
                                 <li><button class="btn_nav work_link">Work</button></li>
                                 <li><button class="btn_nav about_link">About Me</button></li>
@@ -100,11 +98,27 @@
                             </ul>
                         </nav>
                     </header>
+                    <div class="subpage-content">
+                        <div class="inner">
+                            <h1 class="page-title work">WORK</h1>
+                            <p>
+                                bla bla bla
+                                <a href="#text-callout2" class="open-popup-text text-link"
+                                    style="color: #FFF !important; text-align: right;display: block !important; width: 100%; padding: 1em;">Text
+                                    Link</a>
+
+                                <div id="text-callout2" class="text-popup mfp-hide">
+                                    <strong>HTML Formated Popup2</strong><br>
+                                    <p>Text Copy Goes here</p>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
-
+        <!--- /END WORK -->
         <footer id="footer">
             <p class="copyright">2020 Untitled. Design: <a href="mailto:ramymond.daugherty.jr@gmail.com">Raymond
                     Daugherty</a>.</p>
@@ -115,6 +129,7 @@
     <!------------------------------------------------------------------------ -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.js"></script>
     <script>
         $(document).ready(function () {
             // Fakes the loading setting a timeout
@@ -123,7 +138,19 @@
             }, 10);
             $('.intro').addClass('fadeIn');
         });
+        // Pop-up script
+        $('.open-popup-text').magnificPopup({
+            type: 'inline',
+            midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        });
 
+        // Mobile Nav
+        document.querySelector(".menu-btn").addEventListener(
+            "click", // Listens for the 'click'
+            () => document.querySelector(".main-menu").classList.toggle("show-menu") // Toggles the "show" class to the main-menu class
+        );
+
+        // Page Transition Javascript
         $('.btn_nav').click(function () {
             // $('.bg').addClass('hide');
             // animate content
@@ -167,6 +194,7 @@
             }, 1500);
         });
     </script>
+
 </body>
 
 </html>
