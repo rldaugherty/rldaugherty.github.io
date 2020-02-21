@@ -20,6 +20,8 @@
     -- Add a "Portfolio" button at the top of the page.
         https://www.youtube.com/watch?v=1D4FzPcEiN4
 
+        "Intelligence is knowing Frankenstein was the doctor, not the monster. Wisdom is knowing that Frankenstein was really the true monster."
+
 ------------------->
 
 <head>
@@ -27,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/scss/styles.css">
     <link rel="stylesheet" href="/assets/scss/magnific-popup.css">
-    <link rel="stylesheet" href="/assets/scss/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>Raymond Daugherty - Digital Designer</title>
 </head>
 
@@ -39,7 +41,6 @@
         <div class="loader-section section-right"></div>
     </div>
     <!------------------------------------------------------------------------ -->
-
 
     <div id="wrapper">
         <!--- INTRO -->
@@ -63,7 +64,6 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><button class="btn_nav intro_link">Home</button></li>
                                 <li><button class="btn_nav work_link">Work</button></li>
                                 <li><button class="btn_nav about_link">About Me</button></li>
                                 <li><button class="btn_nav contact_link">Contact</button></li>
@@ -86,9 +86,10 @@
                         <div class="logo">
                             <span class="icon"></span>
                             <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
+                            <div class="menu-btn"><i class="fas fa-bars fa-2x"></i></div>
                         </div>
                         <nav>
-                            <ul>
+                            <ul class="main-menu">
                                 <li><button class="btn_nav intro_link">Intro</button></li>
                                 <li><button class="btn_nav work_link">Work</button></li>
                                 <li><button class="btn_nav about_link">About Me</button></li>
@@ -99,7 +100,7 @@
                     </header>
                     <div class="subpage-content">
                         <div class="inner">
-
+                            <h1 class="page-title work">WORK</h1>
                             <p>
                                 bla bla bla
                                 <a href="#text-callout2" class="open-popup-text text-link"
@@ -117,7 +118,7 @@
                 </div>
             </div>
         </div>
-
+        <!--- /END WORK -->
         <footer id="footer">
             <p class="copyright">2020 Untitled. Design: <a href="mailto:ramymond.daugherty.jr@gmail.com">Raymond
                     Daugherty</a>.</p>
@@ -143,6 +144,11 @@
             midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
         });
 
+        // Mobile Nav
+        document.querySelector(".menu-btn").addEventListener(
+            "click", // Listens for the 'click'
+            () => document.querySelector(".main-menu").classList.toggle("show-menu") // Toggles the "show" class to the main-menu class
+        );
 
         // Page Transition Javascript
         $('.btn_nav').click(function () {
