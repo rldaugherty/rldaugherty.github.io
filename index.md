@@ -58,7 +58,7 @@
                                 <h1 id="full-name" class="dark-shadow">Raymond Lane Daugherty</h1>
                                 <p>
                                     Digital Designer with experience in beautiful Web Design and Print
-                                    Medias
+                                    Media
                                 </p>
                             </div>
                         </div>
