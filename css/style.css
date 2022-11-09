@@ -1,0 +1,11 @@
+body {
+  background-color: #fff8ea;
+}
+
+hr {
+  border-style: dotted none none;
+  width: 5%;
+  border-width: 5px;
+  border-bottom: 0;
+  border-color: rgba(158, 118, 118, 0.4784313725);
+}/*# sourceMappingURL=style.css.map */
