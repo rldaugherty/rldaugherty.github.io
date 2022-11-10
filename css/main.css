@@ -1,3 +1,20 @@
+:root {
+  --cream: #FFF8EA;
+  --light: #9E7676;
+  --medium: #815B5B;
+  --dark: #594545;
+  --blueish: rgb(44, 44, 165) ;
+}
+
 body {
-  background-color: rgb(44, 44, 165);
+  background-color: var(--blueish);
+  margin: 0;
+  padding: 0;
+}
+body div {
+  background-color: var(--light);
+}
+body h1, body p {
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=main.css.map */
