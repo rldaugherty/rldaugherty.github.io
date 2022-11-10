@@ -1,0 +1,17 @@
+body {
+    background-color: #fff8ea;
+  h1, h3 {
+    color: #9e7676;
+  }
+  hr {
+    border-style: dotted none none;
+    width: 5%;
+    border-width: 5px;
+    border-bottom: 0;
+    border-color: hsla(0, 34%, 71%, 0.478);
+  }
+  #profile-img{
+    border-radius: 50%;
+    width: 150px;
+  }
+}

@@ -1,0 +1,17 @@
+body {
+  background-color: #fff8ea;
+}
+body h1, body h3 {
+  color: #9e7676;
+}
+body hr {
+  border-style: dotted none none;
+  width: 5%;
+  border-width: 5px;
+  border-bottom: 0;
+  border-color: hsla(0deg, 34%, 71%, 0.478);
+}
+body #profile-img {
+  border-radius: 50%;
+  width: 150px;
+}/*# sourceMappingURL=main.css.map */
