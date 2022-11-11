@@ -1,19 +1,24 @@
 :root{
-    --cream: #FFF8EA;
+    --cream: #F1EEE9;
     --light: #9E7676;
     --medium: #815B5B;
     --dark: #594545;
-    --blueish: rgb(44, 44, 165)
+    --blueish: lightblue;
+    --white: #fff;
+    --black: #000;
+    --orange: #EC994B;
+    --gray: #73777B;
+    --darkblue: #15133C;
 }
 body{
-    background-color:var(--blueish);
+    background-color:var(--white);
     margin: 0;
     padding: 0;
-    div{
-        background-color:var(--light);
-    }
     h1,p{
         margin: 0;
         padding: 0;
     }
+    .top-container{background-color:var(--blueish);}
+    .middle-container{ background-color: Red; height: 200px; width: 200px;}
+    .bottom-container{ background-color: yellow; height: 200px; width: 200px;}
 }
