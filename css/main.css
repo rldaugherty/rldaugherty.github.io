@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..900;1,700&display=swap");
 :root {
   --cream: #F1EEE9;
   --light: #9E7676;
@@ -9,19 +10,22 @@
   --orange: #EC994B;
   --gray: #73777B;
   --darkblue: #15133C;
+  --font-family: "Mulish", san-serif;
 }
 
 body {
   background-color: var(--white);
   margin: 0;
-  padding: 0;
+  text-align: center;
+  font-family: var(--font-family);
 }
-body h1, body p {
-  margin: 0;
-  padding: 0;
+body h1 {
+  font-weight: 900;
 }
 body .top-container {
   background-color: var(--blueish);
+  position: relative;
+  padding: 3.5% 0 0;
 }
 body .middle-container {
   background-color: Red;
@@ -32,4 +36,17 @@ body .bottom-container {
   background-color: yellow;
   height: 200px;
   width: 200px;
+}
+body .top-cloud {
+  position: absolute;
+  right: 28%;
+  top: 5%;
+}
+body .bottom-cloud {
+  position: absolute;
+  left: 33%;
+  bottom: 55%;
+}
+body .mountain {
+  position: relative;
 }/*# sourceMappingURL=main.css.map */
