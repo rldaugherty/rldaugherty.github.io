@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Merriweather&family=Sacramento&Montserrat:ital,wght@0,200..900;1,700&display=swap');
 :root{
     --cream: #F1EEE9;
     --light: #9E7676;
@@ -10,20 +10,41 @@
     --orange: #EC994B;
     --gray: #73777B;
     --darkblue: #15133C;
-    --font-family: "Mulish", san-serif;
+    --font-family: "Mulish", Arial, san-serif;
+    --default-font-size: 16px;
 }
 body{
     background-color:var(--white);
     margin: 0;
     text-align: center;
     font-family: var(--font-family);
+    font-size: var(--default-font-size);
     h1{
        font-weight: 900;
+       font-family: "Sacramento", Arial, san-serif;
+       font-size: 5.625rem;
+       line-height: 2;
+       padding-top: 2rem;
+       color: #66BFBF;
     }
+    h2{
+        font-size: 2.5rem;
+        line-height: 2rem;
+        color: #66BFBF;
+        font-weight: normal;
+    }
+    h3{
+        color: #11999E;
+    }
+    a{
+        color: #11999E;
+    }
+    .pro{text-decoration: underline;}
     .top-container{background-color:var(--blueish); position: relative; padding: 3.5% 0 0}
-    .middle-container{ background-color: Red; height: 200px; width: 200px;}
-    .bottom-container{ background-color: yellow; height: 200px; width: 200px;}
+    .profile-img, .skill-img{border-radius: 50%; max-width: 150px;}
+    .middle-container{}
+    .bottom-container{}
     .top-cloud{position:absolute; right: 28%; top: 5%}
-    .bottom-cloud{position:absolute; left: 33%; bottom: 55%;}
+    .bottom-cloud{position:absolute; left: 25%; bottom: 55%;}
     .mountain{position: relative;}
 }
